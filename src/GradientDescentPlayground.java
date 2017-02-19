@@ -18,8 +18,11 @@ public class GradientDescentPlayground {
             trainingData.set(i,1,i);
             labels.set(i,0,12+(i*13));
         }
+        /**
+         * if alpha is bigger then 0.001, we cant converge.
+         */
         double alpha = 0.001;
-        int numberOfIterations = 30000;
+        int numberOfIterations = 50000;
         SimpleMatrix optimum =  GradientDescent.gradientDescent(trainingData, labels, theta, alpha,numberOfIterations );
         System.out.println(optimum);
     }

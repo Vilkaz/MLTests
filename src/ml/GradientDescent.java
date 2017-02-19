@@ -30,13 +30,15 @@ public class GradientDescent {
             SimpleMatrix sub = mult1.minus(labels);
             SimpleMatrix transMult = trainingData.transpose().mult(sub);
             SimpleMatrix mult2 = transMult.scale(alpha/m);
-
             theta = theta.minus(mult2);
-            oldJ = currentJ;
-            currentJ = ComputeCost.computeCost(trainingData, labels, theta);
-            jImprovement = oldJ-currentJ;
-            System.out.print("iteration nr :"+i+" J="+ currentJ);
-            System.out.println("  JImprovement = "+ (jImprovement));
+//             this prints the improvements of process.
+//             feel free to decomment this and check the steps.(first iteration is kinda useles :)
+//            oldJ = currentJ;
+//            currentJ = ComputeCost.computeCost(trainingData, labels, theta);
+//            jImprovement = oldJ-currentJ;
+//            System.out.print("iteration nr :"+i+" J="+ currentJ);
+//            System.out.println("  JImprovement = "+ (jImprovement));
+
         }
 
         return theta;
